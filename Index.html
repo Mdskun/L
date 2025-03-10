@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
+
+        body {
+            background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Letter Styling */
+        .letter-container {
+            width: 90%;
+            max-width: 600px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .title {
+            font-size: 26px;
+            color: #d6336c;
+            text-align: center;
+        }
+
+        .letter {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hidden-surprise {
+            color: #d6336c;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hidden-surprise:hover {
+            color: #ff4e50;
+        }
+
+        .surprise-message {
+            display: none;
+            color: #ff4e50;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: opacity 0.5s;
+        }
+
+        /* Floating Hearts */
+        @keyframes floating {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+        }
+
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            font-size: 24px;
+            color: #ff4e50;
+            opacity: 0.8;
+            animation: floating linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop autoplay>
+        <source src="wanna-be-yours.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Floating Hearts -->
+    <div class="hearts-container"></div>
+
+    <div class="letter-container">
+        <h1 class="title">A Letter Just for You 💌</h1>
+        <div class="letter">
+            <p>My love,</p>
+            <p>You are the most beautiful part of my life. Every moment with you feels like a dream, and I cherish each second.</p>
+            <p>No words can truly express how much you mean to me, but I will try...</p>
+
+            <p class="hidden-surprise" onclick="revealSurprise()">Click here for a little secret... 💖</p>
+            <p id="surprise-message" class="surprise-message">You are my forever, my always, my everything. I love you endlessly. 💕</p>
+
+            <p>Forever yours,</p>
+            <p><strong>Your Name</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function revealSurprise() {
+            document.getElementById("surprise-message").style.display = "block";
+        }
+
+        // Auto-play background music on user interaction
+        document.body.addEventListener('click', function() {
+            document.getElementById("bg-music").play();
+        });
+
+        // Function to create floating hearts
+        function createHeart() {
+            let heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart");
+
+            // Randomize position, size, and animation duration
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            heart.style.fontSize = (Math.random() * 10 + 15) + "px";
+
+            document.body.appendChild(heart);
+
+            // Remove heart after animation
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+
+        // Generate hearts every 500ms
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
