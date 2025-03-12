@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You ❤️</title>
+    <title>For You Darling❤️</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
 
@@ -14,10 +14,10 @@
             margin: 0;
             padding: 0;
             height: 100vh;
+            overflow-y: auto; /* Enables scrolling */
             display: flex;
             justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            align-items: flex-start; /* Aligns content to the top so scrolling works */
             position: relative;
         }
 
@@ -30,6 +30,7 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             text-align: left;
+            margin: 50px 0; /* Adds space for scrolling */
         }
 
         .title {
@@ -87,21 +88,28 @@
         <source src="wanna-be-yours.mp3" type="audio/mp3">
     </audio>
 
-    <!-- Floating Hearts -->
-    <div class="hearts-container"></div>
-
     <div class="letter-container">
         <h1 class="title">A Letter Just for You 💌</h1>
         <div class="letter">
-            <p>My love,</p>
-            <p>You are the most beautiful part of my life. Every moment with you feels like a dream, and I cherish each second.</p>
-            <p>No words can truly express how much you mean to me, but I will try...</p>
+            <p>To my one and only "pasandita aurat"<br>
+                (Known to world as Sakshi Rathore),,</p>
+            <p>Happy Birthday again,<br>
+                Just as I did first to wish you and last to gift, I want to be your first person to know what happened good/bad in a day & even if I'm the last person that can help to your problem, I still wanna know your problem.
+            </p>
+            <p>I really miss old days but I'm not complaining. I miss the days when you told me every little detail about your day, gossiping about everything. Sometimes I literally passed the full day happily knowing that I'm gonna talk to you at that time. Well, I'm not saying I'm sad about now that we don't talk much, I know we both are busy in our life.</p>
+            <p>I don't know if you were just nice or if I'm the special person to you or if I'm just a side character, but for me, you're THE GREATEST PERSON EVER.<br>
+                I had accepted my destiny of not being able to join any group/make any friends, but well, you changed my thoughts to some extent.
+                Thanks for that ❤️.</p>
+            <p>Oh and I noticed in your black saree photos, I haven't seen any accessories around your ear. So, I selected a "Jhumka"/earrings from Law Garden's market. If you don't like it, you can give them to another person.</p>
+            <p class="hidden-surprise" onclick="revealSurprise()">Click here to reveal my feelings 💖</p>
+            <p id="surprise-message" class="surprise-message">I really have clear intentions to make you my life partner. It's up to you to decide whether you wanna be just friends forever or be my girlfriend officially and even actually my wife...<br>
 
-            <p class="hidden-surprise" onclick="revealSurprise()">Click here for a little secret... 💖</p>
-            <p id="surprise-message" class="surprise-message">You are my forever, my always, my everything. I love you endlessly. 💕</p>
+                <strong>I love you</strong> after all, I will be with you no matter what you decide. 😊</p>
 
-            <p>Forever yours,</p>
-            <p><strong>Your Name</strong></p>
+            <p>Your Admirer,<br>
+                (Known to world as best-friend)
+            </p>
+            <p><strong>Manthan D Soni</strong></p>
         </div>
     </div>
 
